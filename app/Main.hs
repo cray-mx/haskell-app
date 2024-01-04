@@ -50,9 +50,12 @@ userActivity users currentUser = replicateM_ 100 $ do
 main :: IO ()
 main = do
   -- Create 10 users
-  users <- replicateM 10 $ do
-    name <- replicateM 5 (randomRIO ('a', 'z'))
-    createUser name
+--   users <- replicateM 10 $ do
+--     name <- replicateM 5 (randomRIO ('a', 'z'))
+--     createUser name
+
+  let usernames = ["john", "jane", "bob", "alice", "charlie", "diana", "eric", "fiona", "george", "helen"]
+  users <- forM usernames $ \name -> createUser name
 
   -- Spawn threads for each user
   mapM_ (forkIO . userActivity users) users
