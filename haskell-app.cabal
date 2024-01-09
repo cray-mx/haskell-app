@@ -25,7 +25,8 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Types
+      UserActivity
   other-modules:
       Paths_haskell_app
   autogen-modules:
