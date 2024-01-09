@@ -1,9 +1,9 @@
 name:                haskell-app
 version:             0.1.0.0
-github:              "githubuser/haskell-app"
+github:              "cray-mx/haskell-app"
 license:             BSD-3-Clause
-author:              "Author name here"
-maintainer:          "example@example.com"
+author:              "Rayaan"
+maintainer:          "ec23459@qmul.ac.uk"
 copyright:           "2024 Author name here"
 
 extra-source-files:
@@ -44,17 +44,6 @@ executables:
   haskell-app-exe:
     main:                Main.hs
     source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - haskell-app
-
-tests:
-  haskell-app-test:
-    main:                Spec.hs
-    source-dirs:         test
     ghc-options:
     - -threaded
     - -rtsopts
