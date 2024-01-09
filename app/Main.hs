@@ -5,12 +5,13 @@ import Control.Monad
 import System.Random
 import qualified Data.Map as Map
 
--- Define the User and Message types
+-- Define the User type
 data User = User {
   username :: String,
   receivedMessages :: MVar [Message]
 }
 
+-- Define the Message type
 data Message = Message {
   fromUser :: String,
   content :: String
@@ -19,7 +20,7 @@ data Message = Message {
 instance Show Message where
   show (Message from content) = from ++ ": " ++ content
 
--- Function to create a user with a given username
+-- Function to create a user with a given name
 createUser :: String -> IO User
 createUser name = do
   mbox <- newMVar []
