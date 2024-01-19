@@ -7,11 +7,11 @@ import Control.Concurrent
 import System.Random
 import qualified Data.Map as Map
 
--- Function to create a user with a given name
+-- Function to create a user with a given name and an empty mail box which will store received messages
 createUser :: String -> IO User
 createUser name = do
-  mbox <- newMVar []
-  return $ User name mbox
+  mail_box <- newMVar []
+  return $ User name mail_box
 
 -- Function to send a message from one user to another
 sendMessage :: User -> User -> Message -> IO ()
@@ -30,6 +30,6 @@ userActivity users currentUser = replicateM_ 100 $ do
   let sender = username currentUser
 
   -- Create and send a message
-  let messageContent = "Hello from " ++ sender
+  let messageContent = "Hi! How are you? This is  " ++ sender
   let message = Message sender messageContent
   sendMessage currentUser recipient message
