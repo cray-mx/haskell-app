@@ -9,7 +9,7 @@ import Types
 main :: IO ()
 main = do
   -- Create 10 users
-  let usernames = ["steve", "paul", "bob", "alice", "jane", "rayaan", "carl", "kendall", "george", "helen"]
+  let usernames = ["steve", "paul", "jacob", "alice", "jane", "rayaan", "carl", "kendall", "george", "emily"]
   users <- forM usernames $ \name -> createUser name
 
   -- Spawn threads for each user
